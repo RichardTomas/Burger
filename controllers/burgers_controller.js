@@ -7,10 +7,10 @@ const express = require("express");
 const burger = require('../models/burger.js')
 const router = express.Router();
 
-// Use Handlebars to render the main index.html page with the plans in it.
+// Use Handlebars to render the main index.html page with the burgers in it.
 router.get("/", function(req, res) {
 
-  // call the model method that gets all the plans
+  // call the model method 
   burger.all(function(err, data) {
 
     if (err) { return res.status(500).end(); }
@@ -19,10 +19,10 @@ router.get("/", function(req, res) {
   });
 });
 
-// Create a new plan
+// Create 
 router.post("/burgers", function(req, res) {
 
-  // call the model method that creates plan
+  // call the model method 
   burger.create(req.body.burger, function(err, data) {
 
     if (err) { return res.status(500).end(); }
@@ -42,7 +42,7 @@ router.get("/burgers", function(req, res) {
 
 });
 
-// Update a plan
+// Update
 router.put("/burgers/:id", function(req, res) {
   
   burger.update(req.body.burger, req.params.id, function(err, data) {
@@ -59,7 +59,7 @@ router.put("/burgers/:id", function(req, res) {
   
 });
 
-// Delete a plan
+// Delete
 router.delete("/burgers/:id", function(req, res) {
   burger.delete(req.params.id, function(err, data) {
     
