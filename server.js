@@ -1,11 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const methodOverride = require('method-override')
-
-
 const exphbs = require("express-handlebars");
 
-const planRoutes = require('./controllers/burgers_controllers.js')
+const router = require("./controllers/burgers_controller.js");
 
 const app = express();
 const port = 3000;
@@ -22,7 +19,7 @@ app.set("view engine", "handlebars");
 app.use(express.static('public'));
 
 // include the plan routes from the controller
-app.use(planRoutes);
+app.use(router);
 
 app.listen(port, function() {
   console.log("listening on port", port);

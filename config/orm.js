@@ -11,6 +11,7 @@
 // insertOne()
 // updateOne()
 // Export the ORM object in module.exports.
+
 const connection = require('./connection.js');
 
 // orm the abstract way of communicating with the database
@@ -23,7 +24,7 @@ const orm = {
       onResult(err, result);
     })
   },
-  insertInto: function(table, columns, values, onResult) {
+  insertOne: function(table, columns, values, onResult) {
     const query = "INSERT INTO ?? (??) VALUES (?)";
     connection.query(query, [table, columns, values] , function(err, result) {
       // now we pass the result back in our callback
@@ -31,7 +32,7 @@ const orm = {
       onResult(err, result);
     })
   },
-  update: function(table, column, value, id, onResult) {
+  updateOne: function(table, column, value, id, onResult) {
     const query = 'UPDATE ?? SET ?? = ? WHERE id = ?'
     connection.query(query, [table, column, value, id], function(err, result) {
       console.log(err)

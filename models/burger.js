@@ -6,19 +6,19 @@ const orm = require('../config/orm.js');
 const burger = {
 
   all: function(callback) {
-    orm.selectAll('plans', callback);
+    orm.selectAll('burgers', callback);
   },
 
   create: function(planText, callback) {
-    orm.insertInto('plans', 'plan', planText, callback);
+    orm.insertOne('burgers', 'burger_name', planText, callback);
   },
 
   update: function(newText, id, callback) {
-    orm.update('plans', 'plan', newText, id, callback);
+    orm.updateOne('burgers', 'burger_name', newText, id, callback);
   },
 
   delete: function(id, callback) {
-    orm.delete('plans', id, callback);
+    orm.delete('burgers', id, callback);
   }
 
 }
