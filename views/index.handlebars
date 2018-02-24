@@ -1,13 +1,13 @@
-<h1>Burger CRUD app</h1>
+<h1>Eat-Da-Burger!</h1>
 
 <ul>
  {{#each burgers}}
  <li class="list{{id}}">
    <p>
    <div class="burgerIcon"></div>
-   <div class="bugerName">{{this.burger_name}}</div>
-     <div class="buttondiv">
-       <button data-burgerid="{{id}}" class="deleteBurger">Eat Burger!</button>
+   <div class="burgerName">{{this.burger_name}}</div>
+     <div class="buttonDiv">
+       <button data-burgerId="{{id}}" class="deleteBurger">Eat Burger!</button>
      </div>
    </p>
  </li>
@@ -15,13 +15,13 @@
 </ul>
 
 <h2>Create a burger</h2>
-<form id="createburger" class="button-size">
+<form id="createBurger" class="button-size">
  <textarea type="text" name="burger"></textarea>
- <button type="submit">Save burger!</button>
+ <button type="submit">Save Burger!</button>
 </form>
 
 <h2>Update a burger</h2>
-<form id="updateburger" class="button-size">
+<form id="updateBurger" class="button-size">
  <select name="id">
         {{#each burgers}}
             <option value="{{this.id}}">{{this.burger_name}}</option>
