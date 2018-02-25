@@ -24,4 +24,4 @@ In this assignment, you'll create a burger logger with MySQL, Node, Express, Han
 
 Deployed in Heroku
 
-ttps://young-sands-54388.herokuapp.com/
+https://young-sands-54388.herokuapp.com/
